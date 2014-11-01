@@ -1,0 +1,36 @@
+March 21 2011
+http://www.asymptopia.org
+AsymptopiaSoftware|Software@theLimit
+
+
+TuxMathScrabble: TuxMathScrabble is a math version of the classic word game "Scrabble" (Trademark of Hasbro,Inc) which challenges kids to construct compound equations and to consider multiple abstract possibilities.  There are four skill levels for practice, from basic addition with small numbers, through multiplication and division with larger numbers.  The game can be played by 0, 1 or 2 human players.  Player submissions are made by dragging tiles to the gameboard and pressing the "okay" button when ready to be validated. Invalid submissions are thrown-back to the user's tray.   Several new features have recently been added, such as the ability to shuffle player tiles in-place, the programatic creation of tiles on-the-fly (as opposed to using images), configurable tile transparency, the ability to use a background image, and the option of configuring the "None" character for either/both players.  (Lin/Win/Mac)
+
+
+Step Into Chinese: Step Into Chinese is a flexible language-mining tool to assist English speakers seeking to understand Chinese language. The lack of a one-to-one correspondence between Chinese characters and the corresponding Pinyin is often regarded as the greatest difficulty facing learners of Chinese. Step Into Chinese has been designed to address exactly this difficulty. The application data structure contains over 26,000 modern Chinese words and concepts, corresponding to over 8,300 separate Chinese characters. Colors are used consistently throughout the application for rapid location and absorption of information. Flashcards can be created and displayed in a variety of styles, and a screensaver mode provides an entertaining exposure to the Chinese language. (Lin/Win/Mac)
+
+
+TuxWordSmith: TuxWordSmith is similar to the classic word game "Scrabble", but with unicode support for multiple languages and character sets. The game is currently distributed with forty-two (42) dictionary resources for playing Language[i]-Language[j] "Scrabble".  For example, if configured to use the French-German dictionary, then the distribution of available tiles will be computed based on frequency of occurance of each character of Language[i] (French), and for each submission the corresponding definition will be given in Language[j] (German).   The latest release (0.6.0) includes support for the Greek and Cyrillic (Russian, Ukranian) character sets, thus making it possible to play Scrabble in Greek, Russian and Ukranian, as well as a host of other languages which use latin characters.  TuxWordSmith (TWS) is a "sister" application to TuxMathScrabble(TMS) -- the TWS code is 95% identical to the TMS code.  (Lin/Win/Mac)
+
+
+MIDI Sight Reader is an online music application inspired by its predecessor, the original MidiFlashCard system. The application scrolls both piano notes and guitar tablature.  Notes are played for audio confirmation as they pass under the centerline on the window.  The scrolling staffs drive a keyboard model and a guitar neck model. The guitar and keyboard can drive each other as well, for interactive exploration of the correspondence between the two instruments.  The 3 components, staff, keyboard and guitar, can be independently added and removed from the top down, so many combinations of layout can be achieved.  Subsequent versions will focus on implementing more sophisticated music generation capabilities.
+
+
+Asymptopia Crossword Builder (Math/Text): This application runs in any modern web browser, but does not require an internet connection (if downloaded and installed locally). The application was designed to allow teachers to quickly produce well-designed, challenging activities. The application features a configuration panel where the user can either enter their own word-hint pairs, or generate math-crossword problems via a single button. The math functionality generates word:hint pairs like: "four:7/x-3/8=11/8", where the hint corresponds to the problem, and the student would write the letters "four" in the corresponding boxes of the puzzle. A completed puzzle consists of three (3) sheets: Answer Key, Puzzle Sheet and Hints Sheet. Use your browser's built-in print functionality to print each of the pages, and hand your student the paper copy to be completed with pencil. Virtually every subject has associated terminology, and many variations are possible. For example: On the website you can find a list of countries, and their center-of-mass lattitudes and longitudes, from which you can quickly construct a puzzle with word:hint pairs like "Australia:lat=-27, lon=+133". Give your student a globe and such a puzzle, and let them learn geography and spherical geometry, simultaneously. Also, use with Google Translate to generate whatever words you may desire in almost every language. 
+
+
+TWS-ASCII: TWS-ASCII is a console (text only) version of TuxWordSmith (TWS).  It was designed to be usable by braille computer users.  The instigator and initial motivation of the project was a deaf-blind lady from the Boston area.  I was told that she loved to play Scrabble, but that no suitable computer application existed which was compatible with braille computer hardware.  So TWS-ASCII runs in the terminal from the command line, through the Python interpreter, and is OS independent as well as hardware independent (i.e. it works with Braille computer hardware).  It uses the Oxford English Dictionary, only, and has a few extra features than the graphical version of TWS. (Lin/Win/Mac)
+
+
+Multiplication Station: Multiplication Station will teach your student to add, subtract and multiply ... Guaranteed. The application allows the instructor to configure upper and lower limits of the rows and columns of an MxN grid (M-rows, N-columns), as well as which operation to use (addition, subtraction or multiplication).  The default configuration is a 12x12 grid for multiplication, but this can easily be re-configured to any ranges and dimensions.  The application features a configurable countdown timer to discourage laziness, and a high-score manager to encourage friendly competition. Using the countdown timer in conjuction with large numbers is an effective way to compel students to mentally compute triple-digit sums without paper and pencil. This application is scheduled to be updated soon in order to align it with the latest versions of TuxMathScrabble and TuxWordSmith, as the codes are all similar.(Lin/Win/Mac)
+
+
+Asymptopia BlackJack: Teaches kids to gamble (and count!). This application is scheduled to be updated soon in order to align it with the latest versions of TuxMathScrabble and TuxWordSmith, as the codes are all similar. It features a keyboard-driven GUI interface with sound effects. (Lin/Win/Mac)
+
+
+LaTeX Flashcard System: Create, manage and display collections of LaTeX flashcards. (Linux)
+
+
+All of these products are produced entirely at the expense of the author, with no additional funding of any kind.  
+
+
+Thank You and Enjoy the Software!

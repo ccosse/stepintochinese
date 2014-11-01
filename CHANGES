@@ -1,0 +1,31 @@
+====================================
+CHANGES v0.11
+March 21, 2011
+
+-restored flashcard capability
+
+====================================
+CHANGES v0.10
+October 21, 2010
+
+-Installation instructions updated
+-Bugfix for Windows config file
+
+====================================
+CHANGES v0.9
+January 19, 2010
+
+-Bugfix when admin writes to config.
+
+====================================
+CHANGES v0.6
+July 5, 2008
+
+-Modifications to python imports to make 
+ compliant with current wx versions.
+
+====================================
+CHANGES v0.5
+November 9, 2007
+
+====================================

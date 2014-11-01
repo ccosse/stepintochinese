@@ -1,0 +1,50 @@
+====================================
+Step Into Chinese v0.11
+March 21, 2011
+====================================
+
+All OS's must install python.
+
+LINUX INSTALLATION:
+	1. install pygame (pygame.org; required)
+	
+	2. install wxpython (wxpython.org; optional)
+	
+	3. unpack the project: 
+		tar -xzvf stepintochinese.tgz (Linux/Mac)
+	
+	3. run (as root) setup.py (optional, Linux only)
+	
+	4. run (as user):
+		/usr/local/bin/stepintochinese (/usr/local/bin)
+		or
+		./stepintochinese.py
+
+	To make the admin GUI interface available launch with:
+	"./stepintochinese.py -wx"
+		
+MAC INSTALLATION:
+
+	Just unzip the downloaded pkg, cd into the directory
+	and run ./stepintochinese.py from a terminal 
+	(aka: command prompt)
+	
+	You must install pygame (required) and wxpython (optional)
+	
+	To make the admin GUI interface available launch with:
+	"./stepintochinese.py -wx"
+	
+WINDOWS INSTALLATION (XP/Windows 7):
+
+	Just unzip the downloaded pkg and double-click the stepintochinese.py
+	launcher in the unzipped package directory.  
+	
+	If you want the admin configuration interface then you must
+	launch the program from a command prompt (DOS prompt) ... ie
+	the black command prompt icon in the Accessories folder under 
+	the start menu.
+	
+	You must install pygame (required) and wxpython (optional)
+	
+	To make the admin GUI interface available launch with:
+	"./stepintochinese.py -wx"
