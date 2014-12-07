@@ -7,11 +7,13 @@
 
     Website         :www.asymptopia.org
 
+    Support         :www.asymptopia.org/forum
+
     Author          :Charles B. Cosse
 
-    Email           :ccosse@gmail.com
+    Email           :ccosse@asymptopia.org
 
-    Copyright       :(C) 2006-2011 Asymptopia Software
+    Copyright       :(C) 2006-2015 Asymptopia Software
 
     License         :GPLv3
 
@@ -50,8 +52,8 @@ class StepIntoChinese(ChineseParser):
 		
 		self.appdir=appdir
 		self.env=Environment('StepIntoChinese')
-		self.SITEPKGDIR=self.env.SITEPKGDIR
-		self.HOMEDIR=self.env.HOMEDIR
+		self.SITEPKGDIR=self.env.sitepkgdir
+		self.HOMEDIR=self.env.homedir
 		self.config_mgr=CfgMgr(self)
 		
 		self.W=None
@@ -93,7 +95,7 @@ class StepIntoChinese(ChineseParser):
 		self.loginbuttons=None
 		self.login_button=None
 		self.global_config=self.load_config()
-		self.button_imgpaths={'login_button':os.path.join(self.env.SITEPKGDIR,self.global_config['APPDIR'],'Images','login_button.gif'),}
+		self.button_imgpaths={'login_button':os.path.join(self.env.sitepkgdir,self.global_config['APPDIR'],'Images','login_button.gif'),}
 		self.admin=wxAdmin(self)
 		self.admin.setup()
 
@@ -551,7 +553,7 @@ class StepIntoChinese(ChineseParser):
 				cmd="cp %s %s"%(master_fname,os.path.join(homedir,'.stepintochinese_config'))
 				os.system(cmd)
 		
-		fname_flashcards=os.path.join(self.env.HOMEDIR,'.stepintochinese_flashcards')
+		fname_flashcards=os.path.join(self.env.homedir,'.stepintochinese_flashcards')
 		if not os.path.exists(fname_flashcards):
 			ouf=open(fname_flashcards,'w')
 			ouf.write('[]')
@@ -573,7 +575,7 @@ class StepIntoChinese(ChineseParser):
 	
 	def run(self):
 		
-		inf=open(os.path.join(self.env.HOMEDIR,'.stepintochinese_flashcards'))
+		inf=open(os.path.join(self.env.homedir,'.stepintochinese_flashcards'))
 		self.flashkeys=eval(inf.read())
 		inf.close()
 		
@@ -594,8 +596,7 @@ class StepIntoChinese(ChineseParser):
 		
 		
 		pygame.init()
-		fontdir=os.path.join(self.env.SITEPKGDIR,'StepIntoChinese','Font')
-		print fontdir
+		fontdir=os.path.join(self.env.sitepkgdir,'StepIntoChinese','Font')
 		self.bigfont=pygame.font.Font(os.path.join(fontdir,'sunglobe.ttf'),130)
 		self.medfont=pygame.font.Font(os.path.join(fontdir,'sunglobe.ttf'),32)
 		
@@ -637,7 +638,7 @@ class StepIntoChinese(ChineseParser):
 		
 		parser.setFeature(feature_namespaces, 0)
 		parser.setContentHandler(self)
-		infname=fontdir=os.path.join(self.env.SITEPKGDIR,self.global_config['APPDIR'],'sic.xml')
+		infname=fontdir=os.path.join(self.env.sitepkgdir,self.global_config['APPDIR'],'sic.xml')
 		inf=open(infname)
 		parser.parse(inf)
 		inf.close()
@@ -1086,8 +1087,8 @@ class StepIntoChinese(ChineseParser):
 		
 		msgs=[
 			u'',
-			u'Step Into Chinese v0.11',
-			u'March 21, 2011',
+			u'Step Into Chinese v0.12',
+			u'December 7, 2014',
 			u'',
 			u'Asymptopia Software | Software@theLimit',
 			u'www.asymptopia.org',
@@ -1216,7 +1217,7 @@ class StepIntoChinese(ChineseParser):
 			'',
 			'**********************************************************',
 			'*                                                        *',
-			'*   You are using version 0.11 from March 21, 2011      *',
+			'*   You are using version 0.12 from December 7, 2014      *',
 			'*                                                        *',
 			'*                http://www.asymptopia.org               *',
 			'*                                                        *',

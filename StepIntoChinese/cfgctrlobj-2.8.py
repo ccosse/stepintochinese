@@ -5,13 +5,11 @@
 
     Website         :www.asymptopia.org
 
-    Support         :www.asymptopia.org/forum
-
     Author          :Charles B. Cosse
 
     Email           :ccosse@asymptopia.org
 
-    Copyright       :(C) 2006-2015 Asymptopia Software
+    Copyright       :(C) 2006-2011 Asymptopia Software
 
     License         :GPLv3
 
@@ -23,16 +21,16 @@ from environment import *
 DEBUG=0
 
 class CfgCtrlObj(wx.Panel):
-	def __init__(self,parent,key,obj_dict,xypos,dxysize):
+	def __init__(self,cp,key,obj_dict):
 		if DEBUG:print key
 		if DEBUG:print obj_dict
 		self.key=key
 		self.obj_dict=obj_dict
 		self.label=None
-		self.env=Environment("TuxMathScrabble")#only need this for paths to Actor images ...
-		wx.Panel.__init__(self,parent,wx.NewId(),xypos,dxysize)
+		self.env=Environment("StepIntoChinese")#only need this for paths to Actor images ...
+		wx.Panel.__init__(self,cp,wx.NewId(),wx.DefaultPosition,wx.DefaultSize,style=wx.FULL_REPAINT_ON_RESIZE)
 		
-		sbox=wx.StaticBox(self,-1,key,xypos,dxysize);
+		sbox=wx.StaticBox(self,-1,key,wx.DefaultPosition,wx.DefaultSize);
 		self.sbsizer=wx.StaticBoxSizer(sbox,wx.HORIZONTAL);
 		sizer=wx.BoxSizer(wx.HORIZONTAL)
 		
@@ -273,20 +271,18 @@ class CfgCtrlObj(wx.Panel):
 			#Set value of widget, b/c widget is what gets queried @ SaveCB
 			#print dir(self.widget)
 			#print dir(self.widget.GetColourData())
-			
+		
 		elif self.obj_dict['wtype']=='wx.CheckBox':
 			self.widget.SetValue(int(self.obj_dict['default']))
 			self.CheckBoxCB(None)
 			
 		elif self.obj_dict['wtype']=='wx.FileDialog':
-			self.obj_dict['value']=self.obj_dict['default_value']
-			self.label.SetLabel(self.obj_dict['default_value'])
-			if not self.obj_dict.has_key('default_path'):return
-			if not self.obj_dict.has_key('default_value'):return
+			self.obj_dict['value']=self.obj_dict['default']
+			self.label.SetLabel(self.obj_dict['default'])
 			
-			if os.path.exists(os.path.join(self.obj_dict['default_path'],self.obj_dict['default_value'])):#don't use '' for path! 
-				self.obj_dict['path']=self.obj_dict['default_path']
-				self.obj_dict['value']=self.obj_dict['default_value']
+			if os.path.exists(os.path.join(self.obj_dict['path'],self.obj_dict['default'])):#don't use '' for path! 
+				self.obj_dict['path']=self.obj_dict['path']
+				self.obj_dict['value']=self.obj_dict['default']
 				
 			
 		elif self.obj_dict['wtype']=='wx.ComboBox':
@@ -371,3 +367,10 @@ class CfgCtrlObj(wx.Panel):
 			#print t[0],t[1],t[2]
 			self.label.SetLabel(`self.obj_dict['value']`)
 		
+		"""
+		elif self.obj_dict['wtype']=='wx.ColourDialog':
+			#LEAVE OFF: @default need to SetColourData -- need refer to wx API...TBC.
+			data=self.widget.GetColourData()
+			self.obj_dict['value']=data.GetColour().Get()
+			self.label.SetLabel(`self.obj_dict['value']`)
+		"""
