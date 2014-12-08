@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=StepIntoChinese Admin
+Name[ru]=StepIntoChinese Админ
+GenericName=Explore Chinese Language
+GenericName[de]=Mathematisches Spiel ähnlich Scrabble
+GenericName[ru]=Арифметическая игра Эрудит
+Comment=Explore Chinese with over 26,000 words/concepts and 8,300 characters.
+Comment[ru]=Весёлая игра для изучения математики (режим администратора)
+Exec=stepintochinese -wx
+Icon=stepintochinese
+Terminal=false
+Type=Application
+Categories=Game;BoardGame;

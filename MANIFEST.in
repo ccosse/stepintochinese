@@ -1,0 +1,17 @@
+include .stepintochinese_config_master 
+include README
+include README.md
+include CHANGES
+include INSTALL
+include LICENSE
+include VERSION
+include sic.ico
+include stepintochinese.py
+include mstation.py
+include stepintochinese-admin.desktop
+include stepintochinese.desktop
+include README.md
+include VERSION
+recursive-include Flashcards *
+recursive-include StepIntoChinese/Images *
+recursive-include StepIntoChinese/Font *
