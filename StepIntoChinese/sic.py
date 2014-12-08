@@ -883,18 +883,7 @@ class StepIntoChinese(ChineseParser):
 				elif e.key==K_F9:self.go_help()
 				elif e.key==K_F10:self.go_credit(1)
 				elif e.key==K_F11:self.go_screenshot()
-				elif e.key==K_7:
-					if self.AMFULLSCREEN==True:
-						try:
-							s=pygame.display.set_mode((0,0))
-							self.AMFULLSCREEN=False
-						except Exception,e:print e
-					else:
-						try:
-							s=pygame.display.set_mode((0,0),pygame.FULLSCREEN)
-							self.AMFULLSCREEN=True
-						except Exception,e:print e
-					
+				elif e.key==K_7:self.go_fullscreen()
 				#elif e.key==K_F12:self.AMFULLSCREEN=pygame.display.toggle_fullscreen()
 				elif e.key==K_LSHIFT:self.SHIFT=1
 				elif e.key==K_RSHIFT:self.SHIFT=1
@@ -1030,18 +1019,7 @@ class StepIntoChinese(ChineseParser):
 			elif e.key==K_F9:self.go_help()
 			elif e.key==K_F10:self.go_credit(1)
 			elif e.key==K_F11:self.go_screenshot()
-			elif e.key==K_F7:
-				if self.AMFULLSCREEN==True:
-					try:
-						s=pygame.display.set_mode((0,0))
-						self.AMFULLSCREEN=False
-					except Exception,e:print e
-				else:
-					try:
-						s=pygame.display.set_mode((0,0),pygame.FULLSCREEN)
-						self.AMFULLSCREEN=True
-					except Exception,e:print e
-				
+			elif e.key==K_F7:self.go_fullscreen()
 			elif e.key==K_F12:
 				self.AMFULLSCREEN=pygame.display.toggle_fullscreen()
 				if DEBUG:print 'self.AMFULLSCREEN=',self.AMFULLSCREEN
@@ -1105,6 +1083,18 @@ class StepIntoChinese(ChineseParser):
 				if self.SHIFT:newchar=string.upper(newchar)
 				self.submission=self.submission+newchar
 				
+	def go_fullscreen(self):
+		if self.AMFULLSCREEN==True:
+			try:
+				s=pygame.display.set_mode((0,0))
+				self.AMFULLSCREEN=False
+			except Exception,e:print e
+		else:
+			try:
+				s=pygame.display.set_mode((0,0),pygame.FULLSCREEN)
+				self.AMFULLSCREEN=True
+			except Exception,e:print e
+	
 	def draw_credit(self,mode):
 		
 		linesize=self.myfont.size('text to determine font size')
