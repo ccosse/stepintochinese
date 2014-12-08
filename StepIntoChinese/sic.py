@@ -883,7 +883,7 @@ class StepIntoChinese(ChineseParser):
 				elif e.key==K_F9:self.go_help()
 				elif e.key==K_F10:self.go_credit(1)
 				elif e.key==K_F11:self.go_screenshot()
-				elif e.key==K_7:self.go_fullscreen()
+				elif e.key==K_F7:self.go_fullscreen()
 				#elif e.key==K_F12:self.AMFULLSCREEN=pygame.display.toggle_fullscreen()
 				elif e.key==K_LSHIFT:self.SHIFT=1
 				elif e.key==K_RSHIFT:self.SHIFT=1
