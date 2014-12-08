@@ -1,11 +1,11 @@
 [Desktop Entry]
 Name=StepIntoChinese Admin
 Name[ru]=StepIntoChinese Админ
+Name[it]=StepIntoChinese Amministratore
 GenericName=Explore Chinese Language
-GenericName[de]=Mathematisches Spiel ähnlich Scrabble
-GenericName[ru]=Арифметическая игра Эрудит
+GenericName[it]=Esplora la lingua Cinese
 Comment=Explore Chinese with over 26,000 words/concepts and 8,300 characters.
-Comment[ru]=Весёлая игра для изучения математики (режим администратора)
+Comment[it]=Esplora il Cinese con più di 26000 termini e concetti ed 8300 caratteri
 Exec=stepintochinese -wx
 Icon=stepintochinese
 Terminal=false
