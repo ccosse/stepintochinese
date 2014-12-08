@@ -17,6 +17,7 @@
 ***********************************************************/
 """
 import os,sys,string,time
+sys.path.append('/usr/share/games/stepintochinese/lib')
 from StepIntoChinese.sic import *
 
 if __name__ == "__main__":
