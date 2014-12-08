@@ -58,7 +58,7 @@ if not os.path.exists('/var/games/StepIntoChinese'):os.mkdir('/var/games/StepInt
 
 path='/var/games/StepIntoChinese'
 
-cmd="cp -r  Font README CHANGES VERSION %s"%(path)
+cmd="cp -r  Flashcards README CHANGES VERSION %s"%(path)
 os.system(cmd)
 
 cmd="chmod -R 755 /var/games/%s"%(APPNAME)
