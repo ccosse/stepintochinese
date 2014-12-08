@@ -31,7 +31,7 @@ from dict_formatter import *
 from wxadmin import *
 from cfgmgr import *
 
-DEBUG=0
+DEBUG=1
 
 class StepIntoChineseApp(wx.App):
 	
@@ -883,7 +883,19 @@ class StepIntoChinese(ChineseParser):
 				elif e.key==K_F9:self.go_help()
 				elif e.key==K_F10:self.go_credit(1)
 				elif e.key==K_F11:self.go_screenshot()
-				elif e.key==K_F12:self.AMFULLSCREEN=pygame.display.toggle_fullscreen()
+				elif e.key==K_7:
+					if self.AMFULLSCREEN==True:
+						try:
+							s=pygame.display.set_mode((0,0))
+							self.AMFULLSCREEN=False
+						except Exception,e:print e
+					else:
+						try:
+							s=pygame.display.set_mode((0,0),pygame.FULLSCREEN)
+							self.AMFULLSCREEN=True
+						except Exception,e:print e
+					
+				#elif e.key==K_F12:self.AMFULLSCREEN=pygame.display.toggle_fullscreen()
 				elif e.key==K_LSHIFT:self.SHIFT=1
 				elif e.key==K_RSHIFT:self.SHIFT=1
 			
@@ -1018,6 +1030,18 @@ class StepIntoChinese(ChineseParser):
 			elif e.key==K_F9:self.go_help()
 			elif e.key==K_F10:self.go_credit(1)
 			elif e.key==K_F11:self.go_screenshot()
+			elif e.key==K_F7:
+				if self.AMFULLSCREEN==True:
+					try:
+						s=pygame.display.set_mode((0,0))
+						self.AMFULLSCREEN=False
+					except Exception,e:print e
+				else:
+					try:
+						s=pygame.display.set_mode((0,0),pygame.FULLSCREEN)
+						self.AMFULLSCREEN=True
+					except Exception,e:print e
+				
 			elif e.key==K_F12:
 				self.AMFULLSCREEN=pygame.display.toggle_fullscreen()
 				if DEBUG:print 'self.AMFULLSCREEN=',self.AMFULLSCREEN
@@ -1137,7 +1161,7 @@ class StepIntoChinese(ChineseParser):
 		
 	def go_help(self):
 		self.screen.fill(self.global_config['COLOR_BG']['value'])
-		infname=os.path.join(self.env.SITEPKGDIR,self.global_config['APPNAME'],'Images','StepIntoChinese-Keyboard.png')
+		infname=os.path.join(self.env.sitepkgdir,self.global_config['APPNAME'],'Images','StepIntoChinese-Keyboard.png')
 		self.keymap_surface=pygame.image.load(infname)#os.path.join(self.sitepkgdir,self.global_config['APPNAME'],'Images','sunset01.jpg')
 		self.keymap_surface=pygame.transform.scale(self.keymap_surface, (self.global_config['WIN_W']['value'],self.global_config['WIN_H']['value']))
 		self.screen.blit(self.keymap_surface,(0,0))
@@ -1189,7 +1213,7 @@ class StepIntoChinese(ChineseParser):
 			
 			ouflist.append(strkey)
 		
-		oufname=os.path.join(self.env.HOMEDIR,'.stepintochinese_flashcards')
+		oufname=os.path.join(self.env.homedir,'.stepintochinese_flashcards')
 		ouf=open(oufname,'w')
 		ouf.write(`ouflist`)
 		ouf.close()

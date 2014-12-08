@@ -5,6 +5,12 @@ December 7, 2014
 -Fixed wx admin interface. Now supports
  both wx2.8 and wx3.0.
 
+-Fixed FullScreen mode on Mac, maybe Win?
+ Use F7 to toggle Fullscreen mode.
+ Try with screensaver mode.
+
+-Included the missing config file!
+
 ====================================
 CHANGES v0.11
 March 21, 2011
