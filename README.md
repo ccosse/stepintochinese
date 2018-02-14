@@ -8,11 +8,11 @@ Step Into Chinese is a Chinese language data-mining application
 <pre>
 /**********************************************************
 
-    Author          :Charles Brissac
+    Author          :C. Cosse
 
-    Email           :cdbrissac@gmail.com
+    Email           :ccosse@gmail.com
 
-    Copyright       :(C) 2006-2015 Charles Brissac
+    Copyright       :(C) 2006-2015 C. Cosse
 
     License         :GPLv3
 
