@@ -2,11 +2,9 @@
 """
 /**********************************************************
 
-    Author          :Charles Brissac
+    Author          :Charlie Cosse
 
     Website         :www.asymptopia.com
-
-    Author          :Charlie Cosse
 
     Email           :ccosse@gmail.com
 
