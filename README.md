@@ -8,34 +8,13 @@ Step Into Chinese is a Chinese language data-mining application
 <pre>
 /**********************************************************
 
-    Organization    :AsymptopiaSoftware | Software@theLimit
+    Author          :C. Cosse
 
-    Website         :www.asymptopia.org
+    Email           :ccosse@gmail.com
 
-    Support         :www.asymptopia.org/forum
-
-    Author          :Charles B. Cosse
-
-    Email           :ccosse@asymptopia.org
-
-    Copyright       :(C) 2006-2015 Asymptopia Software
+    Copyright       :(C) 2006-2015 C. Cosse
 
     License         :GPLv3
 
 ***********************************************************/
 
-Please refer to the online documentation at www.asymptopia.org.
-
-
-CHANGES v0.12
-December 7, 2014
-
--Fixed wx admin interface. Now supports
- both wx2.8 and wx3.0.
-
--Fixed FullScreen mode on Mac, maybe Win?
- Use F7 to toggle Fullscreen mode.
- Try with screensaver mode.
-
--Included the missing config file!
-</pre>

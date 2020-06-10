@@ -2,7 +2,7 @@
 """
 /**********************************************************
 
-    Organization    :AsymptopiaSoftware | Software@theLimit
+    Author          :Charles Brissac
 
     Website         :www.asymptopia.com
 
