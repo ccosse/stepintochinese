@@ -1237,7 +1237,7 @@ class StepIntoChinese(ChineseParser):
 			'',
 			'**********************************************************',
 			'*                                                        *',
-			'*   You are using version 0.12 from December 7, 2014      *',
+			'*   You are using version 0.13 from June 8, 2020         *',
 			'*                                                        *',
 			'*                http://www.asymptopia.com               *',
 			'*                                                        *',
