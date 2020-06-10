@@ -1,4 +1,15 @@
 ====================================
+Step Into Chinese v0.13
+June 8, 2020
+====================================
+This project was just updated to run with python3.
+I used Anaconda Python 3.6 and installed pygame using:
+	python3 -m pip install -U pygame --user
+
+and run from the command line of an xterm in topdir:
+	python stepintochinese.py
+
+====================================
 Step Into Chinese v0.12
 December 7, 2014
 ====================================
@@ -9,14 +20,14 @@ If you want wx then launch with -wx flag!
 
 LINUX INSTALLATION:
 	1. install pygame (pygame.org; required)
-	
+
 	2. install wxpython (wxpython.org; optional)
-	
-	3. unpack the project: 
+
+	3. unpack the project:
 		tar -xzvf stepintochinese.tgz (Linux/Mac)
-	
+
 	3. run (as root) setup.py (optional, Linux only)
-	
+
 	4. run (as user):
 		/usr/local/bin/stepintochinese (/usr/local/bin)
 		or
@@ -24,29 +35,29 @@ LINUX INSTALLATION:
 
 	To make the admin GUI interface available launch with:
 	"./stepintochinese.py -wx"
-		
+
 MAC INSTALLATION:
 
 	Just unzip the downloaded pkg, cd into the directory
-	and run ./stepintochinese.py from a terminal 
+	and run ./stepintochinese.py from a terminal
 	(aka: command prompt)
-	
+
 	You must install pygame (required) and wxpython (optional)
-	
+
 	To make the admin GUI interface available launch with:
 	"./stepintochinese.py -wx"
-	
+
 WINDOWS INSTALLATION (XP/Windows 7):
 
 	Just unzip the downloaded pkg and double-click the stepintochinese.py
-	launcher in the unzipped package directory.  
-	
+	launcher in the unzipped package directory.
+
 	If you want the admin configuration interface then you must
 	launch the program from a command prompt (DOS prompt) ... ie
-	the black command prompt icon in the Accessories folder under 
+	the black command prompt icon in the Accessories folder under
 	the start menu.
-	
+
 	You must install pygame (required) and wxpython (optional)
-	
+
 	To make the admin GUI interface available launch with:
 	"./stepintochinese.py -wx"

@@ -18,32 +18,32 @@
 ***********************************************************/
 """
 import wx,os
-from environment import *
+from .environment import *
 
 DEBUG=0
 
 class CfgCtrlObj(wx.Panel):
 	def __init__(self,parent,key,obj_dict,xypos,dxysize):
-		if DEBUG:print key
-		if DEBUG:print obj_dict
+		if DEBUG:print(key)
+		if DEBUG:print(obj_dict)
 		self.key=key
 		self.obj_dict=obj_dict
 		self.label=None
 		self.env=Environment("TuxMathScrabble")#only need this for paths to Actor images ...
 		wx.Panel.__init__(self,parent,wx.NewId(),xypos,dxysize)
-		
+
 		sbox=wx.StaticBox(self,-1,key,xypos,dxysize);
 		self.sbsizer=wx.StaticBoxSizer(sbox,wx.HORIZONTAL);
 		sizer=wx.BoxSizer(wx.HORIZONTAL)
-		
+
 		widget_width=150;
 		widget_height=35;
 		wsize=wx.Size(widget_width,widget_height);
 		self.label_size=wx.Size(20,widget_height);
 		self.button_size=wx.Size(widget_width,widget_height);
-		
+
 		sizer.Add(self.sbsizer,1,wx.GROW,1);
-		
+
 		wxPushBStr="wx.PushB"
 		wxSliderStr="wx.Slider"
 		wxCheckBoxStr="wx.CheckBox"
@@ -52,13 +52,13 @@ class CfgCtrlObj(wx.Panel):
 		wxSpinCtrlStr="wx.SpinCtrl"
 		wxTextCtrlStr="wx.TextCtrl"
 		wxFileDialogStr="wx.FileDialog"
-		
+
 		defaultBID=wx.NewId()
 		defaultB=wx.Button(self,defaultBID,"Default",wx.DefaultPosition,self.button_size)
 		self.defaultB=defaultB#for bgcolor on ColorSelect
 		wx.EVT_BUTTON(defaultB,defaultBID,self.DefaultCB)
-		
-		
+
+
 		if False:pass
 		elif obj_dict['wtype']==wxSliderStr:self.SetupSlider()
 		elif obj_dict['wtype']==wxCheckBoxStr:self.SetupCheckBox()
@@ -67,21 +67,21 @@ class CfgCtrlObj(wx.Panel):
 		elif obj_dict['wtype']==wxComboBoxStr:self.SetupComboBox()
 		elif obj_dict['wtype']==wxSpinCtrlStr:self.SetupSpinCtrl()
 		elif obj_dict['wtype']==wxFileDialogStr:self.SetupFileDialog()
-		
+
 		default_buttons_sizer=wx.BoxSizer(wx.VERTICAL)
 		default_buttons_sizer.Add(defaultB,2,wx.EXPAND)
 		self.sbsizer.Add(default_buttons_sizer,0)#,wx.GROW
-		
+
 		self.SetSizer(sizer)
 		self.SetAutoLayout(True)
 		self.Layout()
 		self.Refresh()
-		
+
 		tooltip=wx.ToolTip(self.obj_dict['tooltip'])
 		self.SetToolTip(tooltip)
-		if DEBUG:print self.GetToolTip().GetTip()
-		
-		
+		if DEBUG:print(self.GetToolTip().GetTip())
+
+
 	def SetupSlider(self):
 		self.widget=wx.Slider(
 			self,
@@ -92,7 +92,7 @@ class CfgCtrlObj(wx.Panel):
 			style=self.obj_dict['style'],
 			size=self.button_size
 		)
-		
+
 		self.sbsizer.Add(self.widget)
 
 		sliderID=wx.NewId()
@@ -102,13 +102,13 @@ class CfgCtrlObj(wx.Panel):
 		if div==100.:label_str="%.2f"%(self.obj_dict['value'])
 		if div==1000.:label_str="%.3f"%(self.obj_dict['value'])
 		if div==10000.:label_str="%.4f"%(self.obj_dict['value'])
-		
+
 		self.label=wx.StaticText(self,sliderID,label_str,size=self.button_size)
 		self.sbsizer.Add(self.label)
-		
+
 		#wx.EVT_BUTTON(self.defaultB,self.defaultBID,self.defaultCB)
 		wx.EVT_SCROLL(self.widget,self.SliderCB)
-		
+
 	def SetupColourDialog(self):
 		colordata=wx.ColourData()
 		colordata.SetChooseFull(True)
@@ -116,23 +116,23 @@ class CfgCtrlObj(wx.Panel):
 		self.widget=wx.ColourDialog(self,colordata)
 		#self.widget.GetColourData().SetColour(wx.Colour(self.obj_dict['value'][0],self.obj_dict['value'][1],self.obj_dict['value'][2]))
 		#print self.widget.GetColourData().GetColour(),wx.Colour(self.obj_dict['value'][0],self.obj_dict['value'][1],self.obj_dict['value'][2])
-		
+
 		showColourDialogBID=wx.NewId()
 		self.showColourDialogB=wx.Button(self,showColourDialogBID,"ShowDialog",size=self.button_size)
 		self.showColourDialogB.SetBackgroundColour(wx.Colour(self.obj_dict['value'][0],self.obj_dict['value'][1],self.obj_dict['value'][2]))
 		self.sbsizer.Add(self.showColourDialogB)
 		wx.EVT_BUTTON(self.showColourDialogB,showColourDialogBID,self.ShowColourDialogCB)
-		
+
 		label_str=''
 		self.label=wx.StaticText(self,wx.NewId(),label_str,size=self.button_size)
-		self.label.SetLabel(`self.obj_dict['value']`)
+		self.label.SetLabel(self.obj_dict['value'])
 		self.sbsizer.Add(self.label)
 
 		self.defaultB.SetBackgroundColour(self.obj_dict['default'])
-	
+
 	def SetupPushB(self):
 		pass
-		
+
 	def SetupComboBox(self):
 		cbID=wx.NewId()
 		self.widget=wx.ComboBox(self,cbID,size=self.button_size,choices=[])
@@ -141,7 +141,7 @@ class CfgCtrlObj(wx.Panel):
 		self.widget.SetValue(self.obj_dict['value'])
 		self.sbsizer.Add(self.widget)
 		wx.EVT_COMBOBOX(self,cbID,self.ComboCB)
-		
+
 		if self.obj_dict['icon']:
 			#in this version, if icon, then actor.
 			fname=os.path.abspath(os.path.join(self.env.sitepkgdir,self.env.appname,'Actors',self.obj_dict['value'],'icon.gif'))
@@ -159,13 +159,13 @@ class CfgCtrlObj(wx.Panel):
 			self.widget.SetValue(int(self.obj_dict['value']))
 			self.sbsizer.Add(self.widget)
 			wx.EVT_SPINCTRL(self.widget,SpinCtrlID,self.SpinCtrlCB)
-			
+
 			label_str=''
 			self.label=wx.StaticText(self,wx.NewId(),label_str,size=self.button_size)
-			self.label.SetLabel(`self.obj_dict['value']`)
+			self.label.SetLabel(str(self.obj_dict['value']))
 			self.sbsizer.Add(self.label)
 
-	
+
 	def SetupCheckBox(self):
 		CheckBoxID=wx.NewId()
 		self.widget=wx.CheckBox(self,CheckBoxID,"",size=self.button_size)
@@ -174,7 +174,7 @@ class CfgCtrlObj(wx.Panel):
 		wx.EVT_CHECKBOX(self.widget,CheckBoxID,self.CheckBoxCB)
 		label_str=''
 		self.label=wx.StaticText(self,wx.NewId(),label_str,size=self.button_size)
-		self.label.SetLabel(`self.obj_dict['value']`)
+		self.label.SetLabel(str(self.obj_dict['value']))
 		self.sbsizer.Add(self.label)
 		self.CheckBoxCB(None)#to set the label after label exists
 
@@ -198,23 +198,23 @@ class CfgCtrlObj(wx.Panel):
 			#print self.key,'3',os.path.join(self.env.sitepkgdir,self.env.appname,self.obj_dict['path'],self.obj_dict['value'])
 			self.widget.SetPath('./')
 			self.widget.SetFilename(self.obj_dict['value'])
-		"""	
+		"""
 		fdID=wx.NewId()
 		self.fdB=wx.Button(self,fdID,"ShowDialog",size=self.button_size)
 		self.sbsizer.Add(self.fdB)
 		wx.EVT_BUTTON(self.fdB,fdID,self.FileDialogCB)
-		
+
 		label_str=''
 		self.label=wx.StaticText(self,wx.NewId(),label_str,size=self.button_size)
-		self.label.SetLabel(self.obj_dict['value'])
+		self.label.SetLabel(str(self.obj_dict['value']))
 		self.sbsizer.Add(self.label)
-	
+
 	def SpinCtrlCB(self,evt):
 		value_str="%02d"%(self.widget.GetValue())
 		self.label.SetLabel(value_str)
 
 	def SliderCB(self,evt):
-		if DEBUG:print 'SliderCB: ',self.widget.GetValue()
+		if DEBUG:print('SliderCB: ',self.widget.GetValue())
 		div=self.obj_dict['divisor']
 		if div==1.:label_str="%.0f"%(self.widget.GetValue()/self.obj_dict['divisor'])
 		if div==10.:label_str="%.1f"%(self.widget.GetValue()/self.obj_dict['divisor'])
@@ -227,11 +227,11 @@ class CfgCtrlObj(wx.Panel):
 		if self.widget.GetValue():value_str="On"
 		else:value_str="Off"
 		self.label.SetLabel(value_str)
-		
+
 	def ShowColourDialogCB(self,e):
 		if self.widget.ShowModal()==wx.ID_OK:pass
 		else:return
-		self.label.SetLabel(`self.obj_dict['value']`)		
+		self.label.SetLabel(str(self.obj_dict['value']))
 		self.showColourDialogB.SetBackgroundColour(self.widget.GetColourData().GetColour().Get())
 
 	def FileDialogCB(self,e):
@@ -242,25 +242,25 @@ class CfgCtrlObj(wx.Panel):
 			self.obj_dict['path']=str(os.path.dirname(path))
 			self.obj_dict['value']=str(os.path.basename(path))
 			self.label.SetLabel(self.obj_dict['value'])
-	
-	
+
+
 	def ComboCB(self,e):
 		newval=self.widget.GetValue()
-		if DEBUG:print 'ComboCB:',newval
+		if DEBUG:print('ComboCB:',newval)
 		if self.obj_dict['icon']:
 			fname=os.path.abspath(os.path.join(self.env.sitepkgdir,self.env.appname,'Actors',newval,'icon.gif'))
 			self.bmp.SetBitmap(wx.Image(fname,wx.BITMAP_TYPE_GIF).ConvertToBitmap())
-		
-		
+
+
 	def DefaultCB(self,e):
-		
+
 		self.Layout()
-		
+
 		if False:pass
 		elif self.obj_dict['wtype']=='wx.ColourDialog':
 			self.obj_dict['value']=self.obj_dict['default']
-			self.label.SetLabel(`self.obj_dict['value']`)
-			
+			self.label.SetLabel(str(self.obj_dict['value']))
+
 			c=wx.Colour(self.obj_dict['default'][0],self.obj_dict['default'][1],self.obj_dict['default'][2]);
 			#self.widget.GetColourData().SetColour(c);
 			#self.widget.GetColourData().SetColour(self.obj_dict['value'])#seems 2B broken!
@@ -268,97 +268,97 @@ class CfgCtrlObj(wx.Panel):
 			colordata.SetChooseFull(True)
 			colordata.SetColour(c)
 			self.widget=wx.ColourDialog(self,colordata)
-		
+
 			self.showColourDialogB.SetBackgroundColour(self.obj_dict['value'])
 			#Set value of widget, b/c widget is what gets queried @ SaveCB
 			#print dir(self.widget)
 			#print dir(self.widget.GetColourData())
-			
+
 		elif self.obj_dict['wtype']=='wx.CheckBox':
 			self.widget.SetValue(int(self.obj_dict['default']))
 			self.CheckBoxCB(None)
-			
+
 		elif self.obj_dict['wtype']=='wx.FileDialog':
 			self.obj_dict['value']=self.obj_dict['default_value']
-			self.label.SetLabel(self.obj_dict['default_value'])
-			if not self.obj_dict.has_key('default_path'):return
-			if not self.obj_dict.has_key('default_value'):return
-			
-			if os.path.exists(os.path.join(self.obj_dict['default_path'],self.obj_dict['default_value'])):#don't use '' for path! 
+			self.label.SetLabel(str(self.obj_dict['default_value']))
+			if not 'default_path' in self.obj_dict.keys():return
+			if not 'default_value' in self.obj_dict.keys():return
+
+			if os.path.exists(os.path.join(self.obj_dict['default_path'],self.obj_dict['default_value'])):#don't use '' for path!
 				self.obj_dict['path']=self.obj_dict['default_path']
 				self.obj_dict['value']=self.obj_dict['default_value']
-				
-			
+
+
 		elif self.obj_dict['wtype']=='wx.ComboBox':
-			self.widget.SetValue(self.obj_dict['value'])
+			self.widget.SetValue(str(self.obj_dict['value']))
 			self.ComboCB(None)
-			
+
 		elif self.obj_dict['wtype']=='wx.TextCtrl':
-			self.widget.SetValue(self.obj_dict['default'])
-			
+			self.widget.SetValue(str(self.obj_dict['default']))
+
 		elif self.obj_dict['wtype']=='wx.Slider':
 			self.widget.SetValue(int(self.obj_dict['default']*self.obj_dict['divisor']))
 			self.SliderCB(None)
-			
+
 		elif self.obj_dict['wtype']=='wx.ImageDialog':
 			self.obj_dict['value']=self.obj_dict['default']
-			self.label.SetLabel(self.obj_dict['value'])
+			self.label.SetLabel(str(elf.obj_dict['value']))
 
 		elif self.obj_dict['wtype']=='wx.SpinCtrl':
 			self.widget.SetValue(int(self.obj_dict['default']))
 			self.SpinCtrlCB(None)
-		
-		
+
+
 	def update(self):
 		if self.obj_dict['wtype']=='wx.ComboBox':
 			self.obj_dict['value']=str(self.widget.GetValue())
-			
+
 		elif self.obj_dict['wtype']=='wx.TextCtrl':
 			self.obj_dict['value']=str(self.widget.GetValue())
-			
+
 		elif self.obj_dict['wtype']=='wx.ImageDialog':
 			#self.val['value']=os.path.basename(self.widget.GetFile())
-			if DEBUG:print 'value=',self.obj_dict['value'],self.label.GetLabel()
-			
+			if DEBUG:print('value=',self.obj_dict['value'],self.label.GetLabel())
+
 		elif self.obj_dict['wtype']=='wx.FontDialog':
-			if DEBUG:print 'update wx.FontDialog'
+			if DEBUG:print('update wx.FontDialog')
 			data=wx.FontData()
 			data.EnableEffects(True)
 			data.SetColour(wx.BLACK)
 			#self.val['value']=data.GetChosenFont().GetFamily()
 			#print data.GetChosenFont().GetFaceName()
 			#self.label.SetLabel(data.GetChosenFont().GetFaceName())
-			
+
 		elif self.obj_dict['wtype']=='wx.FileDialog':
-			if DEBUG:print 'wx.FileDialog update'
+			if DEBUG:print('wx.FileDialog update')
 			try:
-				if DEBUG:print '0 path=',self.obj_dict['path']#,self.label.GetLabel()
-				if DEBUG:print '0 value=',self.obj_dict['value']#,self.label.GetLabel()
-				if os.path.exists(self.widget.GetPath()):#don't use '' for path! 
+				if DEBUG:print('0 path=',self.obj_dict['path'])#,self.label.GetLabel()
+				if DEBUG:print('0 value=',self.obj_dict['value'])#,self.label.GetLabel()
+				if os.path.exists(self.widget.GetPath()):#don't use '' for path!
 					self.obj_dict['path']=str(os.path.dirname(self.widget.GetPath()))
 					self.obj_dict['value']=str(os.path.basename(self.widget.GetPath()))
-					if DEBUG:print '1 path=',self.obj_dict['path']#,self.label.GetLabel()
-					if DEBUG:print '1 value=',self.obj_dict['value']#,self.label.GetLabel()
-			except Exception,e:
-				if DEBUG:print 'Line 368 cfgctrlobj.py: ',e
-				if DEBUG:print dir(self.widget)
-				if DEBUG:print self.widget.GetPath()#returns str
-				if DEBUG:print self.widget.GetPaths()#returns unicode list
-				if DEBUG:print self.widget.GetFilename()#returns string
-				if DEBUG:print self.widget.GetFilenames()#returns unicode list
-				
-			
+					if DEBUG:print('1 path=',self.obj_dict['path'])#,self.label.GetLabel()
+					if DEBUG:print('1 value=',self.obj_dict['value'])#,self.label.GetLabel()
+			except:# Exception,e:
+				if DEBUG:print('Line 368 cfgctrlobj.py: ',e)
+				if DEBUG:print(dir(self.widget))
+				if DEBUG:print(self.widget.GetPath())#returns str
+				if DEBUG:print(self.widget.GetPaths())#returns unicode list
+				if DEBUG:print(self.widget.GetFilename())#returns string
+				if DEBUG:print(self.widget.GetFilenames())#returns unicode list
+
+
 		elif self.obj_dict['wtype']=='wx.SpinCtrl':
 			self.obj_dict['value']=int(self.widget.GetValue())#was float
-			if DEBUG:print 'value=',self.obj_dict['value'],self.label.GetLabel()
+			if DEBUG:print('value=',self.obj_dict['value'],self.label.GetLabel())
 
 		elif self.obj_dict['wtype']=='wx.CheckBox':
 			self.obj_dict['value']=int(self.widget.GetValue())
-			if DEBUG:print 'value=',self.obj_dict['value'],self.label.GetLabel()
+			if DEBUG:print('value=',self.obj_dict['value'],self.label.GetLabel())
 
 		elif self.obj_dict['wtype']=='wx.Slider':
 			self.obj_dict['value']=float(self.widget.GetValue())/self.obj_dict['divisor']#was float
-			if DEBUG:print 'value=',self.obj_dict['value'],self.label.GetLabel()
+			if DEBUG:print('value=',self.obj_dict['value'],self.label.GetLabel())
 
 		elif self.obj_dict['wtype']=='wx.ColourDialog':
 			#LEAVE OFF: @default need to SetColourData -- need refer to wx API...TBC.
@@ -369,5 +369,4 @@ class CfgCtrlObj(wx.Panel):
 			t=data.GetColour().Get()
 			self.obj_dict['value']=(t[0],t[1],t[2])
 			#print t[0],t[1],t[2]
-			self.label.SetLabel(`self.obj_dict['value']`)
-		
+			self.label.SetLabel(self.obj_dict['value'])
