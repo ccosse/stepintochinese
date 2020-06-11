@@ -3,13 +3,11 @@
 
     Organization    :AsymptopiaSoftware | Software@theLimit
 
-    Website         :www.asymptopia.org
-
-    Support         :www.asymptopia.org/forum
+    Website         :ccosse.github.io
 
     Author          :Charles B. Cosse
 
-    Email           :ccosse@asymptopia.org
+    Email           :ccosse@gmail.com
 
     Copyright       :(C) 2006-2015 Asymptopia Software
 
@@ -26,9 +24,9 @@ class Button(pygame.sprite.Sprite):
 		pygame.sprite.Sprite.__init__(self)
 		self.image = pygame.image.load(fname)
 		self.rect=self.image.get_rect()
-	
+
 	def get_height(self):
-		return self.rect[3]-self.rect[1]	
-	
+		return self.rect[3]-self.rect[1]
+
 	def get_width(self):
-		return self.rect[2]-self.rect[0]	
+		return self.rect[2]-self.rect[0]

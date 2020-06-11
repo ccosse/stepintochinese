@@ -1,5 +1,5 @@
 March 21 2011
-http://www.asymptopia.org
+http://ccosse.github.io
 AsymptopiaSoftware|Software@theLimit
 
 
@@ -15,7 +15,7 @@ TuxWordSmith: TuxWordSmith is similar to the classic word game "Scrabble", but w
 MIDI Sight Reader is an online music application inspired by its predecessor, the original MidiFlashCard system. The application scrolls both piano notes and guitar tablature.  Notes are played for audio confirmation as they pass under the centerline on the window.  The scrolling staffs drive a keyboard model and a guitar neck model. The guitar and keyboard can drive each other as well, for interactive exploration of the correspondence between the two instruments.  The 3 components, staff, keyboard and guitar, can be independently added and removed from the top down, so many combinations of layout can be achieved.  Subsequent versions will focus on implementing more sophisticated music generation capabilities.
 
 
-Asymptopia Crossword Builder (Math/Text): This application runs in any modern web browser, but does not require an internet connection (if downloaded and installed locally). The application was designed to allow teachers to quickly produce well-designed, challenging activities. The application features a configuration panel where the user can either enter their own word-hint pairs, or generate math-crossword problems via a single button. The math functionality generates word:hint pairs like: "four:7/x-3/8=11/8", where the hint corresponds to the problem, and the student would write the letters "four" in the corresponding boxes of the puzzle. A completed puzzle consists of three (3) sheets: Answer Key, Puzzle Sheet and Hints Sheet. Use your browser's built-in print functionality to print each of the pages, and hand your student the paper copy to be completed with pencil. Virtually every subject has associated terminology, and many variations are possible. For example: On the website you can find a list of countries, and their center-of-mass lattitudes and longitudes, from which you can quickly construct a puzzle with word:hint pairs like "Australia:lat=-27, lon=+133". Give your student a globe and such a puzzle, and let them learn geography and spherical geometry, simultaneously. Also, use with Google Translate to generate whatever words you may desire in almost every language. 
+Asymptopia Crossword Builder (Math/Text): This application runs in any modern web browser, but does not require an internet connection (if downloaded and installed locally). The application was designed to allow teachers to quickly produce well-designed, challenging activities. The application features a configuration panel where the user can either enter their own word-hint pairs, or generate math-crossword problems via a single button. The math functionality generates word:hint pairs like: "four:7/x-3/8=11/8", where the hint corresponds to the problem, and the student would write the letters "four" in the corresponding boxes of the puzzle. A completed puzzle consists of three (3) sheets: Answer Key, Puzzle Sheet and Hints Sheet. Use your browser's built-in print functionality to print each of the pages, and hand your student the paper copy to be completed with pencil. Virtually every subject has associated terminology, and many variations are possible. For example: On the website you can find a list of countries, and their center-of-mass lattitudes and longitudes, from which you can quickly construct a puzzle with word:hint pairs like "Australia:lat=-27, lon=+133". Give your student a globe and such a puzzle, and let them learn geography and spherical geometry, simultaneously. Also, use with Google Translate to generate whatever words you may desire in almost every language.
 
 
 TWS-ASCII: TWS-ASCII is a console (text only) version of TuxWordSmith (TWS).  It was designed to be usable by braille computer users.  The instigator and initial motivation of the project was a deaf-blind lady from the Boston area.  I was told that she loved to play Scrabble, but that no suitable computer application existed which was compatible with braille computer hardware.  So TWS-ASCII runs in the terminal from the command line, through the Python interpreter, and is OS independent as well as hardware independent (i.e. it works with Braille computer hardware).  It uses the Oxford English Dictionary, only, and has a few extra features than the graphical version of TWS. (Lin/Win/Mac)
@@ -30,7 +30,7 @@ Asymptopia BlackJack: Teaches kids to gamble (and count!). This application is s
 LaTeX Flashcard System: Create, manage and display collections of LaTeX flashcards. (Linux)
 
 
-All of these products are produced entirely at the expense of the author, with no additional funding of any kind.  
+All of these products are produced entirely at the expense of the author, with no additional funding of any kind.
 
 
 Thank You and Enjoy the Software!

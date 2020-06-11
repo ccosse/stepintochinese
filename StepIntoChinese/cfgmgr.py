@@ -3,13 +3,13 @@
 
     Organization    :AsymptopiaSoftware | Software@theLimit
 
-    Website         :www.asymptopia.org
+    Website         :ccosse.github.io
 
     Author          :Charles B. Cosse
 
-    Email           :ccosse@asymptopia.org
+    Email           :ccosse@gmail.com
 
-    Copyright       :(C) 2006-2011 Asymptopia Software
+    Copyright       :(C) 2006-2015 Asymptopia Software
 
     License         :GPLv3
 
